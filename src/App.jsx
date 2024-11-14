@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation.jsx";
 import Body from "./components/Body.jsx";
 import {useState} from "react";
 import {TwitterContext} from "./utils/context.js";
+import avatar from "./components/Avatar.jsx";
 
 
 function App() {
@@ -15,11 +16,14 @@ function App() {
         followers: 10,
         following: 100
     });
+    const handleAvatar = (url) => {
+        setUser({...user, avatar: url})
+    }
 
     return (
         <div className={'app'}>
             <TwitterContext.Provider value={{
-                user, stats
+                user, stats, handleAvatar,
             }}>
                 <Navigation/>
                 <Body/>
