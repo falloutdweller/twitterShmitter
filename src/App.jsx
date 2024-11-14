@@ -14,11 +14,14 @@ function App() {
         followers: 10,
         following: 100
     });
+    const handleAvatar = url => {
+        setUser({...user, avatar: url});
+    }
 
     return (
         <div className={'app'}>
-            <Navigation user={user}/>
-            <Body user={user} stats={stats}/>
+            <Navigation user={user} handleAvatar={handleAvatar} />
+            <Body user={user} stats={stats} handleAvatar={handleAvatar} />
         </div>
     )
 }
