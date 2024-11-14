@@ -17,7 +17,7 @@ function App() {
         following: 100
     });
     const handleAvatar = (url) => {
-        setUser({...user, avatar: url})
+        setUser({...user, avatar: url || user.avatar})
     }
 
     return (
